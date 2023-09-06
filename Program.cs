@@ -15,5 +15,8 @@ class Program
         aluno.VerificarStatus();
 
         Console.WriteLine($"O aluno {aluno.Nome} está {aluno.Status} na disciplina {disciplina.NomeDisciplina}");
+
+        Console.WriteLine("Pressione qualquer tecla para sair...");
+        Console.ReadKey();
     }
 }

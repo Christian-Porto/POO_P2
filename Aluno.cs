@@ -2,19 +2,34 @@
 {
     public class Aluno
     {
-        public string Nome { get; set; }
-        public double Nota1 { get; set; }
-        public double Nota2 { get; set; }
-        public double Media { get; set; }
-        public int Faltas { get; set; }
-        public string Status { get; set; }
-        public bool SemestreFinalizado { get; set; }
-        public Disciplina Disciplina { get; set; }
+        public string Nome { get; protected set; }
+        public double Nota1 { get; protected set; }
+        public double Nota2 { get; protected set; }
+        public double Media { get; protected set; }
+        public int Faltas { get; protected set; }
+        public string Status { get; protected set; }
+        public bool SemestreFinalizado { get; protected set; }
+        public Disciplina Disciplina { get; protected set; }
 
         public Aluno(string nome, bool semestreFinalizado, Disciplina disciplina)
         {
-            Nome = nome;
+            SetNome(nome);
+            SetSemestreFinalizado(semestreFinalizado);
+            SetDisciplina(disciplina);
+        }
+
+        public void SetNome(string nome)
+        { 
+            Nome = nome; 
+        }
+
+        public void SetSemestreFinalizado(bool semestreFinalizado)
+        {
             SemestreFinalizado = semestreFinalizado;
+        }
+
+        public void SetDisciplina(Disciplina disciplina)
+        {
             Disciplina = disciplina;
         }
 
